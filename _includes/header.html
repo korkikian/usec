@@ -1,47 +1,57 @@
-    <nav class="container mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center">
-                <a class="site-title" rel="author" class="logo-wrapper" href="{{ "/" | relative_url }}">
-                    <img src="/assets/img/usec-logo.png" alt="usec - secure your hardware" class="" width="50" height="50">
-                </a>
-            </div>
-            {%- if site.pages.size > 1 -%}
-        
-                    
-                    <div class="hidden md:block">
-                      <div class="ml-10 flex items-baseline space-x-4">
-                        {% assign sorted_pages = site.pages | sort: "order" %}
-                        {% for page in sorted_pages %}
-                          {% if page.title %}
-                            <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-                          {% endif %}
-                        {% endfor %}
-                        <a href="{{ "/contact" | relative_url }}" class="bg-amber-500 text-white hover:bg-amber-400 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contact us</a>
-                      </div>
-                    </div>
-
-                    <div class="md:hidden">
-                      <button type="button" class="mobile-menu-button bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+<nav class="container mx-auto px-6 py-4">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center">
+      <a class="site-title logo-wrapper" rel="author" href="{{ "/" | relative_url }}">
+        <img src="/assets/img/usec-logo-usec-gradient-white.svg" alt="usec - secure your hardware" width="100" >
+      </a>
+    </div>
+    {%- if site.pages.size > 1 -%}
+      <!-- Desktop Menu -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          {% assign sorted_pages = site.pages | sort: "order" %}
+          {% for page in sorted_pages %}
+            {% if page.title %}
+              <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium transition duration-300" href="{{ page.url | relative_url }}">
+                {{ page.title | escape }}
+              </a>
+            {% endif %}
+          {% endfor %}
+          <a href="{{ "/contact" | relative_url }}" class="bg-cyan-600 text-white hover:bg-cyan-500 block px-3 py-2 rounded-md text-base font-medium transition duration-300">
+            Contact us
+          </a>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {% assign sorted_pages = site.pages | sort: "order" %}
-              {% for page in sorted_pages %}
-                {% if page.title %}
-                  <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-300" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-                {% endif %}
-              {% endfor %}
-              <a href="{{ "/contact" | relative_url }}" class="bg-amber-500 text-white hover:bg-amber-400 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contact us</a>
-              </div>
-        </div>  
-    {% endif %}
-    </nav>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {% assign sorted_pages = site.pages | sort: "order" %}
+      {% for page in sorted_pages %}
+        {% if page.title %}
+          <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-300" href="{{ page.url | relative_url }}">
+            {{ page.title | escape }}
+          </a>
+        {% endif %}
+      {% endfor %}
+      <a href="{{ "/contact" | relative_url }}" class="bg-amber-500 text-white hover:bg-amber-400 block px-3 py-2 rounded-md text-base font-medium transition duration-300">
+        Contact us
+      </a>
+    </div>
+  </div>
+  {%- endif -%}
+</nav>

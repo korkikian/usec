@@ -1,19 +1,19 @@
-<section class="text-black py-16">
-    <div class="container mx-auto px-6 py-12">
-        <div class="flex flex-col md:flex-row items-center justify-between">
-            <div class="md:w-1/2 md:pl-8">
+<section class="bg-gradient-to-r from-gray-200 to-white text-black py-8">
+    <div class="container mx-auto px-6 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between md:gap-8">
+            <div class="md:w-1/2">
                 <h2 class="text-2xl md:text-4xl font-bold leading-tight mb-4">
                     {{ include.title | default: "Your Compelling Title Here" }}
                 </h2>
                 <p class="text-xl mb-6">
                     {{ include.description | default: "Add your persuasive text here. Describe your product, service, or main message in a way that engages your audience and encourages them to take action." }}
                 </p>
-                <a href="{{ include.cta_url | default: '#' }}" class="inline-block hover:underline text-amber-400 font-medium transition duration-300 ease-in-out">
+                <a href="{{ include.cta_url | default: '#' }}" class="inline-block hover:underline text-cyan-600 font-medium transition duration-300 ease-in-out">
                     {{ include.cta_text | default: "Call to Action" }}
                 </a>
             </div>
             <div class="md:w-1/2 mb-8 md:mb-0">
-                <img src="{{ include.image_path | default: '/api/placeholder/500/300' }}" alt="{{ include.image_alt | default: 'Title Image' }}" class="rounded-lg shadow-2xl"/>
+                <img src="{{ include.image_path | default: '/api/placeholder/500/300' }}" alt="{{ include.image_alt | default: 'Title Image' }}" class="w-[90%] rounded-lg shadow-2xl"/>
             </div>
         </div>
     </div>

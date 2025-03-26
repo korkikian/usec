@@ -13,60 +13,54 @@ layout: default
     image_alt="Hardware Security Illustration"
 -%}
 
-<div class="home">
-    {%- include col_section_left_text.html
-        image_path="/assets/img/usec-tpm_sniffing.jpeg"
-        image_alt="usec - tpm sniffing"
-        title="The need for securing hardware devices"
-        description="In today's tech ecosystems, interconning devices, sensors, gateways and cloud infrastructure, securing hardware is esssential to protect sensitive data and maintain system integrity."
-        cta_url=""
-        cta_text="Learn More"
-    -%}
-    {%- include col_section_right_text.html
-        image_path="/assets/img/usec-microscope_zoom.jpeg"
-        image_alt="usec - microscope zoom"
-        title="More than standard security assesments"
-        description="Modern ecosystems require more than standard security assesments. They require comprehensive hardware security analyses that reflect actual threats and attack vectors, examining all potential entry points."
-        cta_url="/services"
-        cta_text="Learn More"
-    -%}
-    {%- include col_section_left_text.html
-        image_path="/assets/img/usec-jade_sca.jpeg"
-        image_alt="usec - jade sca"
-        title="Comprehensive hardware security services"
-        description="uSec provides comprehensive hardware security services, including side-channel and fault analysis, to ensure hardware devices are secure and resilient against modern threats."
-        cta_url="/contat"
-        cta_text="Contact us"
-    -%}
-    
-    {%- include posts_list.html -%}
 
+<div class="home">
+  
+  
+  <!-- Additional Information Section -->
+  <section class="more-info">
+    <div class="col-section">
+      {%- include col_section_left_text.html
+          image_path="/assets/img/usec-tpm_sniffing.jpeg"
+          image_alt="uSec - TPM Sniffing"
+          title="The Need for Securing Hardware Devices"
+          description="In today's interconnected tech ecosystems, securing hardware is essential to protect sensitive data and maintain system integrity."
+          cta_url="/services"
+          cta_text="Learn More"
+      -%}
+    </div>
+    <div class="col-section">
+      {%- include col_section_right_text.html
+          image_path="/assets/img/usec-microscope_zoom.jpeg"
+          image_alt="uSec - Microscope Zoom"
+          title="More Than Standard Security Assessments"
+          description="Modern ecosystems require comprehensive hardware security analyses that reflect actual threats and attack vectors."
+          cta_url="/services"
+          cta_text="Learn More"
+      -%}
+    </div>
+    <div class="col-section">
+      {%- include col_section_left_text.html
+          image_path="/assets/img/usec-jade_sca.jpeg"
+          image_alt="uSec - Jade SCA"
+          title="Comprehensive Hardware Security Services"
+          description="uSec provides comprehensive hardware security services, including side-channel and fault analysis, to ensure devices are secure against modern threats."
+          cta_url="/contact"
+          cta_text="Contact Us"
+      -%}
+    </div>
+  </section>
+  
+  <!-- Call-to-Action Section -->
+  <section class="call-to-action">
     {%- include cta.html
         title="Talk to an Expert"
         description="We are ready to help you secure your hardware and protect your future."
         button_url="/contact"
         button_text="Contact Us"
     -%}
-  {{ content }}
-  <!-- {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%} -->
+  </section>
 </div>
+
+
+

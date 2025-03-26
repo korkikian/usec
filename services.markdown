@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Services
+permalink: /services/
 order: 2
 ---
 {% include masthead.html 

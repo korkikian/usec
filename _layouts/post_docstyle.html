@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="flex flex-col md:flex-row container mx-auto px-4 md:px-6 py-12">
+
+  <!-- Sidebar Navigation -->
+  <aside class="md:w-1/4 pr-6 mb-8 md:mb-0 sticky top-20 h-fit">
+    <nav class="space-y-4 text-sm leading-6" id="sidebar-nav">
+      <h2 class="font-semibold text-lg mb-4">Contents</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li><a href="#dumping-like-a-pro-in-device-repair" class="hover:text-cyan-700 block">Device Repair</a></li>
+        <li><a href="#dumping-like-a-pro-software-hacker" class="hover:text-cyan-700 block">Software Hacker</a></li>
+        <li><a href="#dumping-like-a-pro-hardware-hacker" class="hover:text-cyan-700 block">Hardware Hacker</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="md:w-3/4 prose prose-lg max-w-4xl leading-snug" id="post-content">
+    {{ content }}
+  </main>
+</div>
+
+<script>
+  // Optional: Scrollspy script (simplified)
+  document.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("#post-content h2[id]");
+    const links = document.querySelectorAll("#sidebar-nav a");
+
+    let currentId = "";
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 100) {
+        currentId = section.id;
+      }
+    }
+
+    links.forEach((link) => {
+      link.classList.remove("font-bold", "text-cyan-700");
+      if (link.getAttribute("href") === `#${currentId}`) {
+        link.classList.add("font-bold", "text-cyan-700");
+      }
+    });
+  });
+</script>
